@@ -1,0 +1,12 @@
+---
+
+- name: Ensure a self signed certificate is present
+  command: openssl req -x509 -new -nodes -subj {{ cert_subject }} -days {{ cert_days_valid }} -keyout {{ cert_key }} -out {{ cert_certificate }}
+  args:
+    creates: "{{ cert_key }}"
+
+- set_fact:
+    chain_file: "{{ cert_certificate }}"
+    certificate_file: "{{ cert_certificate }}"
+    key_file: "{{ cert_key }}"
+

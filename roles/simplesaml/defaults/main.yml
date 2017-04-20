@@ -1,0 +1,36 @@
+# Default values for SimpleSamlPHP installation
+ssp_hostname: www.example.org
+ssp_version: 1.14.12
+ssp_download_base_url: "https://github.com/simplesamlphp/simplesamlphp/releases/download/v{{ ssp_version }}"
+ssp_tar_file: simplesamlphp-{{ ssp_version }}.tar.gz
+ssp_tar_location: /tmp/{{ ssp_tar_file }}
+ssp_installation_dir: "/var/www"
+ssp_unarchived_dir: "{{ ssp_installation_dir }}/simplesamlphp-{{ ssp_version }}"
+ssp_dir: "{{ ssp_installation_dir }}/simplesamlphp"
+ssp_modules_dir: "{{ ssp_dir }}/modules"
+ssp_title_suffix:
+ssp_well_known_logins: "{{ ssp_dir }}/config/logins.json"
+ssp_base_url_path: "https://{{ ssp_hostname }}"
+ssp_cert_dir: "cert"
+ssp_logging_dir: "log"
+ssp_data_dir: "data"
+ssp_temp_dir: "/tmp/simplesaml"
+ssp_debug: false
+ssp_showerrors: false
+ssp_subject: "/CN={{ ssp_hostname }}"
+ssp_days_valid: 3650
+ssp_key: "{{ ssp_hostname }}.pem"
+ssp_certificate: "{{ ssp_hostname }}.crt"
+ssp_auth_admin_password: "changethispassword"
+#ssp_secretsalt:
+ssp_technicalcontact_name: Contact
+ssp_technicalcontact_email: sysop@{{ ssp_hostname }}
+ssp_managingcontact_name: Manager
+ssp_managingcontact_email: info@{{ ssp_hostname }}
+ssp_timezone: 'Europe/Amsterdam'
+ssp_logging_level: SimpleSAML_Logger::NOTICE
+ssp_logging_handler: 'syslog'
+ssp_session_authtoken_cookiename: SimpleSAMLAuthToken
+ssp_store_type: phpsession
+spp_sp_metadata:
+spp_sp_consumer: 

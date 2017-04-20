@@ -1,0 +1,14 @@
+---
+ssl_restart:
+  - apache2
+#  - php5-fpm
+
+ssl_disable:
+  - default
+  - 000-default
+
+ssl_enable:
+   - simplesaml
+
+ssl_templates:
+  - { src: apache.conf.j2, dest: /etc/apache2/sites-available/simplesaml.conf }

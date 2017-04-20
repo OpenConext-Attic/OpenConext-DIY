@@ -1,0 +1,5 @@
+# Default values for the self-signed certificate are based on the certificate hostname
+cert_subject: "/CN={{ cert_hostname }}"
+cert_days_valid: 3650
+cert_certificate: "/etc/ssl/certs/{{ cert_hostname }}.pem"
+cert_key: "/etc/ssl/private/{{ cert_hostname }}.key"

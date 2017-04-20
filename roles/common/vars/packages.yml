@@ -1,0 +1,17 @@
+---
+packages:
+  - apache2
+  - certbot
+  - libpq-dev
+  - php
+  - libapache2-mod-php
+#  - php-fpm
+  - php-mbstring
+  - php-mcrypt
+  - php-xml
+  - postfix
+  - python-certbot-apache
+
+packagesfastcgi:
+  - libapache2-mod-fastcgi
+  - apache2-mpm-worker

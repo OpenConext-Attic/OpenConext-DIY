@@ -1,0 +1,27 @@
+---
+# playbook to install and configure the Apache webserver
+- include_vars: "ssl.yml"
+
+- name: Push the template for the SSL config files
+  template:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+  with_items: "{{ ssl_templates }}"
+  become: yes
+
+- name: disable the default site
+  command: a2dissite "{{ item }}"
+  with_items: "{{ ssl_disable }}"
+  become: yes
+
+- name: enable the configured site(s)
+  command: a2ensite "{{ item }}"
+  with_items: "{{ ssl_enable }}"
+  become: yes
+
+- name: Restart Apache and related services
+  service:
+    name: "{{ item }}"
+    state: restarted
+  with_items: "{{ ssl_restart }}"
+  become: yes

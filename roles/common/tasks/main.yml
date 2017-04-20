@@ -1,0 +1,52 @@
+---
+- include_vars: "packages.yml"
+- include_vars: "repositories.yml"
+
+#Command for switch from apache2_handler to php-fpm
+#- name: Remove a repo
+#  apt_repository:
+#    repo: "{{ item }}"
+#    state: present
+#    update_cache: no
+#  with_items: removerepository
+
+- name: Ensure all necessary repositories are present
+  apt_repository:
+    repo: "{{ item }}"
+    state: present
+  with_items: "{{ repositories }}"
+  become: Yes
+
+# add the PPA key for the ondrej PHP version packages
+- name: update key cache
+  apt_key:
+    keyserver: keyserver.ubuntu.com
+    id: 4F4EA0AAE5267A6C
+    state: present
+
+- name: perform apt-get update
+  apt:
+    update_cache: yes
+    cache_valid_time: 1
+  become: Yes
+
+- name: ensure that packages are installed
+  apt:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ packages  }}"
+  become: Yes
+
+#- name: install php-fpm packages
+#  apt:
+#    name: "{{ item }}"
+#    state: present
+#  with_items: packagesfastcgi
+
+- name: Check if FQDN is resolvable
+  command: dig @8.8.8.8 {{ idp_hostname }}
+  register: dig
+
+- set_fact:
+  args:
+    resolvable_fqdn: "{{ dig.stdout | search('.*HEADER.*NOERROR.*') }}"

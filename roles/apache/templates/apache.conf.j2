@@ -1,0 +1,23 @@
+#######################################################################
+{{ ansible_managed | comment('plain') }}
+#######################################################################
+
+<VirtualHost *:*>
+    ServerName {{ idp_hostname }}
+    ServerAdmin webmaster@localhost
+
+    DocumentRoot /var/www/html
+
+    # Available loglevels: trace8, ..., trace1, debug, info, notice, warn,
+    # error, crit, alert, emerg.
+    # It is also possible to configure the loglevel for particular
+    # modules, e.g.
+    #LogLevel info ssl:warn
+
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/{{ idp_hostname }}.access.log combined
+
+
+</VirtualHost>
+
+# vim: syntax=apache ts=4 sw=4 sts=4 sr noet

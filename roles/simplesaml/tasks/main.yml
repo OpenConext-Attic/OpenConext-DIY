@@ -1,0 +1,118 @@
+---
+- name: Install SSP - Download archive
+  get_url: url="{{ ssp_download_base_url }}/{{ ssp_tar_file }}" dest="{{ ssp_tar_location }}"
+  register: ssp_download
+
+- name: Install SSP - Unarchive it
+  unarchive: src="{{ ssp_tar_location }}" dest="{{ ssp_installation_dir }}" copy=no
+
+- name: Install SSP - Link dir to standard location
+  file: path={{ ssp_dir }} src={{ ssp_unarchived_dir }} state=link
+
+- name: Install SSP - Generate salt
+  shell: /usr/bin/tr -c -d '0123456789abcdefghijklmnopqrstuvwxyz' </dev/urandom | /bin/dd bs=32 count=1 2>/dev/null;echo
+  register: salt_command
+
+- set_fact:
+  args:
+    ssp_secret_salt: "{{ salt_command.stdout }}"
+
+- debug:
+    msg: "Salt is {{ ssp_secret_salt }}"
+
+- name: Ensure a self signed certificate is present
+  command: openssl req -x509 -new -nodes -subj {{ ssp_subject }} -days {{ ssp_days_valid }} -out {{ ssp_dir }}/{{ ssp_cert_dir }}/{{ ssp_certificate }} -keyout {{ ssp_dir }}/{{ ssp_cert_dir }}/{{ ssp_key }}
+  args:
+    creates: "{{ ssp_dir }}/{{ ssp_cert_dir }}/{{ ssp_key }}"
+
+# Note that there is a lineinfile module which can do this, however it did not seem possible to specify the line nr
+- name: Install SSP - Suffix title to differentiate between various environments
+  when: ssp_title_suffix is defined
+  command: sed -i "2i $this->data['header'] .= ' - {{ ssp_title_suffix }}';" '{{ ssp_dir }}/templates/includes/header.php'
+
+- name: Install SSP - Remove unused config files and modules
+  file: path="{{ item }}" state=absent
+  with_items:
+    - "{{ ssp_dir }}/config/acl.php"
+    - "{{ ssp_dir }}/config/authmemcookie.php"
+    - "{{ ssp_dir }}/config/cas-ldap.php"
+    - "{{ ssp_dir }}/config/config-login-auto.php"
+    - "{{ ssp_dir }}/config/config-login-feide.php"
+    - "{{ ssp_dir }}/config/ldapmulti.php"
+    - "{{ ssp_dir }}/config/ldap.php"
+    - "{{ ssp_dir }}/config/translation.php"
+    - "{{ ssp_dir }}/metadata/adfs-idp-hosted.php"
+    - "{{ ssp_dir }}/metadata/adfs-sp-remote.php"
+    - "{{ ssp_dir }}/metadata/saml20-idp-hosted.php"
+    - "{{ ssp_dir }}/metadata/saml20-sp-remote.php"
+    - "{{ ssp_dir }}/metadata/shib13-idp-hosted.php"
+    - "{{ ssp_dir }}/metadata/shib13-idp-remote.php"
+    - "{{ ssp_dir }}/metadata/shib13-sp-hosted.php"
+    - "{{ ssp_dir }}/metadata/shib13-sp-remote.php"
+    - "{{ ssp_dir }}/metadata/wsfed-idp-remote.php"
+    - "{{ ssp_dir }}/metadata/wsfed-sp-hosted.php"
+    - "{{ ssp_modules_dir }}/adfs"
+    - "{{ ssp_modules_dir }}/aggregator"
+    - "{{ ssp_modules_dir }}/aggregator2"
+    - "{{ ssp_modules_dir }}/aselect"
+    - "{{ ssp_modules_dir }}/authorize"
+    - "{{ ssp_modules_dir }}/authcrypt"
+    - "{{ ssp_modules_dir }}/authfacebook"
+    - "{{ ssp_modules_dir }}/authlinkedin"
+    - "{{ ssp_modules_dir }}/authmyspace"
+    - "{{ ssp_modules_dir }}/authtwitter"
+    - "{{ ssp_modules_dir }}/authwindowslive"
+    - "{{ ssp_modules_dir }}/authX509"
+    - "{{ ssp_modules_dir }}/authYubiKey"
+    - "{{ ssp_modules_dir }}/autotest"
+    - "{{ ssp_modules_dir }}/cas"
+    - "{{ ssp_modules_dir }}/casserver"
+    - "{{ ssp_modules_dir }}/cdc"
+    - "{{ ssp_modules_dir }}/cron"
+    - "{{ ssp_modules_dir }}/consent"
+    - "{{ ssp_modules_dir }}/consentAdmin"
+    - "{{ ssp_modules_dir }}/consentSimpleAdmin"
+    - "{{ ssp_modules_dir }}/discopower"
+    - "{{ ssp_modules_dir }}/exampleattributeserver"
+#    - "{{ ssp_modules_dir }}/exampleauth"
+    - "{{ ssp_modules_dir }}/expirycheck"
+    - "{{ ssp_modules_dir }}/InfoCard"
+    - "{{ ssp_modules_dir }}/ldap"
+    - "{{ ssp_modules_dir }}/logpeek"
+    - "{{ ssp_modules_dir }}/memcacheMonitor"
+    - "{{ ssp_modules_dir }}/metaedit"
+    - "{{ ssp_modules_dir }}/metarefresh"
+    - "{{ ssp_modules_dir }}/modinfo"
+    - "{{ ssp_modules_dir }}/multiauth"
+    - "{{ ssp_modules_dir }}/negotiate"
+    - "{{ ssp_modules_dir }}/oauth"
+    - "{{ ssp_modules_dir }}/openid"
+    - "{{ ssp_modules_dir }}/openidProvider"
+    - "{{ ssp_modules_dir }}/papi"
+    - "{{ ssp_modules_dir }}/portal"
+    - "{{ ssp_modules_dir }}/preprodwarning"
+    - "{{ ssp_modules_dir }}/radius"
+    - "{{ ssp_modules_dir }}/riak"
+    - "{{ ssp_modules_dir }}/saml2debug"
+    - "{{ ssp_modules_dir }}/sanitycheck"
+    - "{{ ssp_modules_dir }}/smartattributes"
+    - "{{ ssp_modules_dir }}/smartnameattribute"
+    - "{{ ssp_modules_dir }}/sqlauth"
+    - "{{ ssp_modules_dir }}/statistics"
+    - "{{ ssp_modules_dir }}/themefeidernd"
+  notify:
+    - restart apache
+
+- name: Install SSP - Copy config and metadata
+  template: src={{ item.src }} dest={{ item.dest }}
+  with_items:
+    - { src: "config/authsources.php.j2", dest: "{{ ssp_dir }}/config/authsources.php" }
+    - { src: "config/config.php.j2", dest: "{{ ssp_dir }}/config/config.php" }
+    - { src: "config/logins.json", dest: "{{ ssp_well_known_logins }}" }
+    - { src: "metadata/saml20-idp-hosted.php.j2", dest: "{{ ssp_dir }}/metadata/saml20-idp-hosted.php" }
+    - { src: "metadata/saml20-sp-remote.php.j2", dest: "{{ ssp_dir }}/metadata/saml20-sp-remote.php" }
+  notify:
+    - restart apache
+
+- name: Install SSP - Enable example auth
+  file: path="{{ ssp_modules_dir }}/exampleauth/enable" state=touch

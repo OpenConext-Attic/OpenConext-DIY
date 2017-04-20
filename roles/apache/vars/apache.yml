@@ -1,0 +1,29 @@
+---
+modules:
+  - mpm_prefork
+  - ssl
+  - status
+  - cgid
+  - cgi
+#  - fastcgi
+  - actions
+  - alias
+  - rewrite
+  - authn_core
+  - authz_user
+
+#conf:
+#  - php5.6-fpm
+
+disable_modules:
+  - mpm_prefork
+
+restart:
+  - apache2
+#  - php5-fpm
+
+#apache_enable_conf:
+# put configuration targets here. Each target is a template in the templates folder
+
+apache_templates:
+  - { src: apache.conf.j2, dest: /etc/apache2/sites-available/default.conf }

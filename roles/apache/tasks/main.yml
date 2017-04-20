@@ -1,0 +1,53 @@
+---
+# playbook to install and configure the Apache webserver
+- include_vars: "apache.yml"
+
+#Uncomment for active php-fpm
+#- name: disable apache module
+#  apache2_module:
+#    state: absent
+#    name: "{{ item }}"
+#  with_items: dismodule
+#
+#- name: enable apache mpm_worker module manually
+#  command: a2enmod mpm_worker
+
+#- name: Ensure some modules are not activated
+#  apache2_module:
+#    state: absent
+#    name: "{{ item }}"
+#  with_items: "{{ disable_modules }}"
+
+- name: Activate apache modules
+  apache2_module:
+    state: present
+    name: "{{ item }}"
+  with_items: "{{ modules }}"
+  become: yes
+  # This is ugly, but Ansible 2.2.0 has a regression which makes this task fail,
+  # while in fact it does not.
+  ignore_errors: True
+
+- name: Push the template for apache config files
+  template:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+  with_items: "{{ apache_templates }}"
+  become: yes
+
+- name: Enable the default site
+  command: a2ensite default
+  become: yes
+
+# uncomment if there are configurations to be set besides the site templates
+#- name: Apache configuration
+#  command: a2enconf {{ item }}
+#  with_items: "{{ apache_enable_conf }}"
+#  become: yes
+
+- name: Restart Apache and related services
+  service:
+    name: "{{ item }}"
+    state: restarted
+  with_items: "{{ restart }}"
+  become: yes
