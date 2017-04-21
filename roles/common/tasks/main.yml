@@ -10,13 +10,6 @@
 #    update_cache: no
 #  with_items: removerepository
 
-- name: Ensure all necessary repositories are present
-  apt_repository:
-    repo: "{{ item }}"
-    state: present
-  with_items: "{{ repositories }}"
-  become: Yes
-
 # add the PPA key for the ondrej PHP version packages
 - name: update key cache
   apt_key:
@@ -28,6 +21,13 @@
   apt:
     update_cache: yes
     cache_valid_time: 1
+  become: Yes
+
+- name: Ensure all necessary repositories are present
+  apt_repository:
+    repo: "{{ item }}"
+    state: present
+  with_items: "{{ repositories }}"
   become: Yes
 
 - name: ensure that packages are installed
