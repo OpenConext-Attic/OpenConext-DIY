@@ -3,7 +3,7 @@
     "professor1:professor1" : {
             "uid" : ["belfort"],
             "schacHomeOrganization" : "harvard-example.edu",
-			"edupersonPrincipleName" : "belfort@harvard-example.edu",
+	    "eduPersonPrincipalName" : "belfort@harvard-example.edu",
             "cn" : "Jordan Ross Belfort",
             "givenName" : "Jordan",
             "sn" : "Belfort",
@@ -16,7 +16,7 @@
     "professor2:professor2" : {
             "uid" : ["wynn"],
             "schacHomeOrganization" : "harvard-example.edu",
-            "edupersonPrincipleName" : "wynn@harvard-example.edu",
+            "eduPersonPrincipalName" : "wynn@harvard-example.edu",
             "cn" : "Steve Alen Wynn",
             "givenName" : "Steve",
             "sn" : "Wynn",
@@ -29,7 +29,7 @@
     "professor3:professor3" : {
             "uid" : ["isaac"],
             "schacHomeOrganization" : "university-example.org",
-            "edupersonPrincipleName" : "isaac@university-example.edu",
+            "eduPersonPrincipalName" : "isaac@university-example.edu",
             "cn" : "Sir Isaac Newton",
             "givenName" : "Isaac",
             "sn" : "Newton",
@@ -42,7 +42,7 @@
     "professor4:professor4" : {
             "uid" : ["g_ohm"],
             "schacHomeOrganization" : "university-example.org",
-            "edupersonPrincipleName" : "g_ohm@university-example.edu",
+            "eduPersonPrincipalName" : "g_ohm@university-example.edu",
             "cn" : "Prof. Dr. Georg Simon Ohm",
             "givenName" : "Georg",
             "sn" : "Ohm",
@@ -55,7 +55,7 @@
     "professor5:professor5" : {
             "uid" : ["jrockefeller"],
             "schacHomeOrganization" : "university-example.org",
-            "edupersonPrincipleName" : "jrockefeller@university-example.edu",
+            "eduPersonPrincipalName" : "jrockefeller@university-example.edu",
             "cn" : "John Davison Rockefeller",
             "givenName" : "John Davison",
             "sn" : "Rockefeller",
@@ -68,7 +68,7 @@
     "staff1:staff1" : {
             "uid" : ["jweeler"],
             "schacHomeOrganization" : "university-example.org",
-            "edupersonPrincipleName" : "jweeler@university-example.edu",
+            "eduPersonPrincipalName" : "jweeler@university-example.edu",
             "cn" : "Joseph Weeler",
             "givenName" : "Joseph",
             "sn" : "Weeler",
@@ -80,7 +80,7 @@
     "staff2:staff2" : {
             "uid" : ["awest"],
             "schacHomeOrganization" : "university-example.org",
-            "edupersonPrincipleName" : "awest@university-example.edu",
+            "eduPersonPrincipalName" : "awest@university-example.edu",
             "cn" : "Anthony West",
             "givenName" : "Anthony",
             "sn" : "West",
@@ -92,7 +92,7 @@
     "staff3:staff3" : {
             "uid" : ["oburton"],
             "schacHomeOrganization" : "university-example.org",
-            "edupersonPrincipleName" : "oburton@university-example.edu",
+            "eduPersonPrincipalName" : "oburton@university-example.edu",
             "cn" : "Oscar Burton",
             "givenName" : "Oscar",
             "sn" : "Burton",
@@ -104,7 +104,7 @@
     "student1:student1" : {
             "uid" : ["student1"],
             "schacHomeOrganization" : "diy.surfconext.nl",
-            "edupersonPrincipleName" : "student1@diy.surfconext.nl",
+            "eduPersonPrincipalName" : "student1@diy.surfconext.nl",
             "cn" : "Student One",
             "givenName" : "Student",
             "sn" : "One",
@@ -116,7 +116,7 @@
     "student2:student2" : {
             "uid" : ["FyHah7$J"],
             "schacHomeOrganization" : "diy.surfconext.nl",
-            "edupersonPrincipleName" : "FyHah7$J@diy.surfconext.nl",
+            "eduPersonPrincipalName" : "FyHah7$J@diy.surfconext.nl",
             "cn" : "Student Two",
             "givenName" : "Student",
             "sn" : "Two",
@@ -128,7 +128,7 @@
     "student3:student3" : {
             "uid" : ["student3"],
             "schacHomeOrganization" : "diy.surfconext.nl",
-            "edupersonPrincipleName" : "student3@diy.surfconext.nl",
+            "eduPersonPrincipalName" : "student3@diy.surfconext.nl",
             "cn" : "",
             "givenName" : "",
             "sn" : "Three",
@@ -140,7 +140,7 @@
     "student4:student4" : {
             "uid" : ["viggo7"],
             "schacHomeOrganization" : "unidenmark-example.dk",
-            "edupersonPrincipleName" : "viggo7@unidenmark-example.dk",
+            "eduPersonPrincipalName" : "viggo7@unidenmark-example.dk",
             "cn" : "Christian Godfried Viggo Lind",
             "givenName" : "Godfried",
             "sn" : "Viggo",
@@ -152,7 +152,7 @@
     "student5:student5" : {
             "uid" : ["U3342109"],
             "schacHomeOrganization" : "exchange-example.edu",
-            "edupersonPrincipleName" : "U3342109@exchange-example.edu",
+            "eduPersonPrincipalName" : "U3342109@exchange-example.edu",
             "cn" : "Daisuke Takahashi, 髙橋 大輔",
             "givenName" : "Daisuke",
             "sn" : "Takahashi",
@@ -164,7 +164,7 @@
     "student6:student6" : {
             "uid" : ["U6789003"],
             "schacHomeOrganization" : "home-university-example.org",
-            "edupersonPrincipleName" : "U6789003@home-university-example.org",         
+            "eduPersonPrincipalName" : "U6789003@home-university-example.org",         
             "cn" : "Phùng Thị Lệ Tư",
             "givenName" : "Phùng Thị",
             "sn" : "Lệ Tư",
@@ -177,7 +177,7 @@
     "student7:student7" : {
             "uid" : ["jsanden"],
             "schacHomeOrganization" : "uniamsterdam-example.nl",
-            "edupersonPrincipleName" : "jsanden@uniamsterdam-example.nl", 
+            "eduPersonPrincipalName" : "jsanden@uniamsterdam-example.nl", 
             "cn" : "Jaantje van der Sanden",
             "givenName" : "Jaantje",
             "sn" : "van der Sanden",
@@ -190,7 +190,7 @@
     "student8:student8" : {
             "uid" : ["s445599"],
             "schacHomeOrganization" : "universitatmadrid-example",
-            "edupersonPrincipleName" : "s445599@universitatmadrid-example", 
+            "eduPersonPrincipalName" : "s445599@universitatmadrid-example", 
             "cn" : "Alessandra Gómez Llarnas",
             "givenName" : "Alessandra",
             "sn" : "Gómez Llarnas",
@@ -202,7 +202,7 @@
     "student9:student9" : {
             "uid" : ["abriseno"],
             "schacHomeOrganization" : "universitatmadrid-example.es",
-            "edupersonPrincipleName" : "abriseno@universitatmadrid-example.es", 
+            "eduPersonPrincipalName" : "abriseno@universitatmadrid-example.es", 
             "cn" : "Augustus Padrón Briseño",
             "givenName" : "August",
             "sn" : "Briseño",
@@ -214,7 +214,7 @@
     "student10:student10" : {
             "uid" : ["s134567"],
             "schacHomeOrganization" : "pkuni.edu-example.cn",
-            "edupersonPrincipleName" : "s134567@pkuni.edu-example.cn", 
+            "eduPersonPrincipalName" : "s134567@pkuni.edu-example.cn", 
             "cn" : "Shao Jingyi, 邵靜宜",
             "givenName" : "Shao",
             "sn" : "Jingy",
@@ -226,7 +226,7 @@
     "student11:student11" : {
             "uid" : ["U9088123"],
             "schacHomeOrganization" : "uni.poznantech-example.pl",
-            "edupersonPrincipleName" : "U9088123@uni.poznantech-example.pl", 
+            "eduPersonPrincipalName" : "U9088123@uni.poznantech-example.pl", 
             "cn" : "Roman Švejda",
             "givenName" : "Roman",
             "sn" : "Švejda",
@@ -238,7 +238,7 @@
     "student12:student12" : {
             "uid" : ["U7128109"],
             "schacHomeOrganization" : "uni.poznantech-example.pl",
-            "edupersonPrincipleName" : "U7128109@uni.poznantech-example.pl", 
+            "eduPersonPrincipalName" : "U7128109@uni.poznantech-example.pl", 
             "cn" : "Anna Rybínová",
             "givenName" : "Anna",
             "sn" : "Rybínová",
@@ -250,7 +250,7 @@
     "student13:student13" : {
             "uid" : ["p0987743"],
             "schacHomeOrganization" : "pkuni.edu-example.cn",
-            "edupersonPrincipleName" : "p0987743@pkuni.edu-example.cn", 
+            "eduPersonPrincipalName" : "p0987743@pkuni.edu-example.cn", 
             "cn" : "Li Qin Ch'ien",
             "givenName" : "Li Qin",
             "sn" : "Ch'ien",
@@ -262,7 +262,7 @@
     "student14:student14" : {
             "uid" : ["student14"],
             "schacHomeOrganization" : "stockholmuni-example.se",
-            "edupersonPrincipleName" : "student14@stockholmuni-example.se", 
+            "eduPersonPrincipalName" : "student14@stockholmuni-example.se", 
             "cn" : "Martin Nikolaus Jørgensen",
             "givenName" : "Martin",
             "sn" : "Jørgensen",
@@ -274,7 +274,7 @@
     "student15:student15" : {
             "uid" : ["student15"],
             "schacHomeOrganization" : "stockholmuni-example.se",
-            "edupersonPrincipleName" : "student15@stockholmuni-example.se", 
+            "eduPersonPrincipalName" : "student15@stockholmuni-example.se", 
             "cn" : "Sander Johan Kjær",
             "givenName" : "Sander",
             "sn" : "Kjær",
@@ -286,7 +286,7 @@
     "student16:student16" : {
             "uid" : ["student16"],
             "schacHomeOrganization" : "kuni.edu-example.tr",
-            "edupersonPrincipleName" : "student16@kuni.edu-example.tr", 
+            "eduPersonPrincipalName" : "student16@kuni.edu-example.tr", 
             "cn" : "Erôss Neci",
             "givenName" : "Erôss",
             "sn" : "Neci",
@@ -299,7 +299,7 @@
     "student17:student17" : {
             "uid" : ["student17"],
             "schacHomeOrganization" : "kuni.edu-example.tr",
-            "edupersonPrincipleName" : "student17@kuni.edu-example.tr", 
+            "eduPersonPrincipalName" : "student17@kuni.edu-example.tr", 
             "cn" : "Kocsis Szescõ",
             "givenName" : "Kocsis",
             "sn" : "Szescõ",
@@ -311,7 +311,7 @@
     "student18:student18" : {
             "uid" : ["student18"],
             "schacHomeOrganization" : "kuni.edu-example.tr",
-            "edupersonPrincipleName" : "student18@kuni.edu-example.tr",             
+            "eduPersonPrincipalName" : "student18@kuni.edu-example.tr",             
             "cn" : "Marjanca Muršić",
             "givenName" : "Marjanca",
             "sn" : "Muršić",
@@ -323,7 +323,7 @@
     "student19:student19" : {
             "uid" : ["student19"],
             "schacHomeOrganization" : "university-example.org",
-            "edupersonPrincipleName" : "student19@university-example.org",             
+            "eduPersonPrincipalName" : "student19@university-example.org",             
             "cn" : "Petra Penttilä",
             "givenName" : "Petra",
             "sn" : "Penttilä",
@@ -335,7 +335,7 @@
     "student20:student20" : {
             "uid" : ["student20"],
             "schacHomeOrganization" : "unidenmark-example.dk",
-            "edupersonPrincipleName" : "student20@unidenmark-example.dk",             
+            "eduPersonPrincipalName" : "student20@unidenmark-example.dk",             
             "cn" : "Jóney Ingólfsdóttir",
             "givenName" : "Jóney",
             "sn" : "Ingólfsdóttir",
@@ -347,7 +347,7 @@
     "student21:student21" : {
             "uid" : ["student21"],
             "schacHomeOrganization" : "exmplebilbioharderwijk.nl",
-            "edupersonPrincipleName" : "student21@exmplebilbioharderwijk.nl",     
+            "eduPersonPrincipalName" : "student21@exmplebilbioharderwijk.nl",     
             "cn" : "Pietje Puk",
             "givenName" : "Pietje",
             "sn" : "Puk",
@@ -357,7 +357,7 @@
     "teacher1:teacher1" : {
             "uid" : ["jstiglitz"],
             "schacHomeOrganization" : "harvard-example.edu",
-            "edupersonPrincipleName" : "jstiglitz@harvard-example.edu", 
+            "eduPersonPrincipalName" : "jstiglitz@harvard-example.edu", 
             "cn" : "Joseph Eugene Stiglitz",
             "givenName" : "Joseph",
             "sn" : "Stiglitz",
@@ -370,7 +370,7 @@
     "teacher2:teacher2" : {
             "uid" : ["pkrugman"],
             "schacHomeOrganization" : "harvard-example.edu",
-            "edupersonPrincipleName" : "pkrugman@harvard-example.edu", 
+            "eduPersonPrincipalName" : "pkrugman@harvard-example.edu", 
             "cn" : "Prof. Paul Robin Krugman",
             "givenName" : "Paul",
             "sn" : "Krugman",
@@ -382,7 +382,7 @@
     "teacher3:teacher3" : {
             "uid" : ["bbernanke"],
             "schacHomeOrganization" : "yale-uni-example.edu",
-            "edupersonPrincipleName" : "bbernanke@yale-uni-example.edu", 
+            "eduPersonPrincipalName" : "bbernanke@yale-uni-example.edu", 
             "cn" : "Ben Shalom Bernanke",
             "givenName" : "Ben",
             "sn" : "Bernanke",
@@ -394,7 +394,7 @@
     "teacher4:teacher4" : {
             "uid" : ["agreenspan"],
             "schacHomeOrganization" : "yale-uni-example.edu",
-            "edupersonPrincipleName" : "agreenspan@yale-uni-example.edu", 
+            "eduPersonPrincipalName" : "agreenspan@yale-uni-example.edu", 
             "cn" : "Alan Greenspan",
             "givenName" : "Alan",
             "sn" : "Greenspan",
@@ -406,7 +406,7 @@
     "teacher5:teacher5" : {
             "uid" : ["am_ampere"],
             "schacHomeOrganization" : "electrical-uni-example.edu",
-            "edupersonPrincipleName" : "am_ampere@electrical-uni-example.edu", 
+            "eduPersonPrincipalName" : "am_ampere@electrical-uni-example.edu", 
             "cn" : "André-Marie Ampère",
             "givenName" : "André-Marie",
             "sn" : "Ampère",
@@ -418,7 +418,7 @@
     "teacher6:teacher6" : {
             "uid" : ["w_rontgen"],
             "schacHomeOrganization" : "electrical-uni-example.edu",
-            "edupersonPrincipleName" : "w_rontgen@electrical-uni-example.edu", 
+            "eduPersonPrincipalName" : "w_rontgen@electrical-uni-example.edu", 
             "cn" : "Wilhelm Conrad Röntgen",
             "givenName" : "Wilhelm",
             "sn" : "Röntgen",
@@ -430,7 +430,7 @@
     "teacher7:teacher7" : {
             "uid" : ["m_faraday"],
             "schacHomeOrganization" : "electrical-uni-example.edu",
-            "edupersonPrincipleName" : "m_faraday@electrical-uni-example.edu", 
+            "eduPersonPrincipalName" : "m_faraday@electrical-uni-example.edu", 
             "cn" : "Michael Faraday FRS",
             "givenName" : "Michael",
             "sn" : "Faraday",
@@ -442,7 +442,7 @@
     "teacher8:teacher8" : {
             "uid" : ["n_tesla"],
             "schacHomeOrganization" : "electrical-uni-example.edu",
-            "edupersonPrincipleName" : "n_tesla@electrical-uni-example.edu",             
+            "eduPersonPrincipalName" : "n_tesla@electrical-uni-example.edu",             
             "cn" : "Nikola Tesla",
             "givenName" : "Nikola",
             "sn" : "Tesla",
@@ -454,7 +454,7 @@
     "teacher9:teacher9" : {
             "uid" : ["teacher9"],
             "schacHomeOrganization" : "stanford-example.edu",
-            "edupersonPrincipleName" : "teacher9@stanford-example.edu",       
+            "eduPersonPrincipalName" : "teacher9@stanford-example.edu",       
             "cn" : "William Henry Gates III",
             "givenName" : "Bill",
             "sn" : "Gates",
@@ -467,7 +467,7 @@
     "teacher10:teacher10" : {
             "uid" : ["teacher10"],
             "schacHomeOrganization" : "stanford-example.edu",
-            "edupersonPrincipleName" : "teacher10@stanford-example.edu",       
+            "eduPersonPrincipalName" : "teacher10@stanford-example.edu",       
             "cn" : "Steven Paul Jobs",
             "givenName" : "Steve",
             "sn" : "Jobs",
