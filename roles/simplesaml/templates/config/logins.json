@@ -10,6 +10,7 @@
             "displayName" : "Jordan R. Belfort",
             "mail" : ["Jordan.Belfort@harvard-example.edu", "jordan@harvard-example.edu"],
             "eduPersonAffiliation" : ["employee", "faculty", "member"],
+            "eduPersonAffiliation" : ["employee@harvard-example.edu", "faculty@harvard-example.edu", "member@harvard-example.edu"],
             "eduPersonEntitlement" : "urn:mace:dir:entitlement:common-lib-terms-example",
             "isMemberOf" : "urn:collab:org:aarc-project.eu"
         },
@@ -23,6 +24,7 @@
             "displayName" : "Steve Wynn",
             "mail" : ["S.Wynn@harvard-example.edu", "Steve.Wynn@example-casino.com", "steve.Wynn@las.vegas.com"],
             "eduPersonAffiliation" : ["employee", "faculty", "member"],
+             "eduPersonAffiliation" : ["employee@harvard-example.edu", "faculty@harvard-example.edu", "member@harvard-example.edu"],
             "eduPersonEntitlement" : "urn:mace:dir:entitlement:common-lib-terms-example",
             "isMemberOf" : "urn:collab:org:aarc-project.eu"
         },
@@ -35,7 +37,7 @@
             "sn" : "Newton",
             "displayName" : "Isaac Newton",
             "mail" : ["isaacnewton@university-example.org", "newton@university-example.org"],
-            "eduPersonAffiliation" : ["employee", "faculty", "member"],
+            "eduPersonAffiliation" : ["employee@huniversity-example.org", "faculty@university-example.org", "member@university-example.org"],
             "eduPersonEntitlement" : "urn:mace:dir:entitlement:common-lib-terms-example",
             "isMemberOf" : "urn:collab:org:aarc-project.eu"
         },
@@ -49,6 +51,7 @@
             "displayName" : "Georg Ohm",
             "mail" : "georg.ohm@university-example.org",
             "eduPersonAffiliation" : ["employee", "faculty", "member"],
+            "eduPersonAffiliation" : ["employee@huniversity-example.org", "faculty@university-example.org", "member@university-example.org"],
             "eduPersonEntitlement" : "urn:mace:dir:entitlement:common-lib-terms-example",
             "isMemberOf" : "urn:collab:org:aarc-project.eu"
         },
@@ -62,6 +65,7 @@
             "displayName" : "John D. Rockefeller",
             "mail" : "John.D.Rockefeller@university-example.org",
             "eduPersonAffiliation" : ["employee", "faculty", "member"],
+            "eduPersonAffiliation" : ["employee@huniversity-example.org", "faculty@university-example.org", "member@university-example.org"],
             "eduPersonEntitlement" : "urn:mace:dir:entitlement:common-lib-terms-example",
             "isMemberOf" : "urn:collab:org:aarc-project.eu"
         },
@@ -75,6 +79,7 @@
             "displayName" : "Joseph Weeler",
             "mail" : "Joseph+Weeler@university-example.org",
             "eduPersonAffiliation" : ["employee", "member", "staff"],
+            "eduPersonAffiliation" : ["employee@huniversity-example.org", "staff@university-example.org", "member@university-example.org"],
             "isMemberOf" : "urn:collab:org:aarc-project.eu"
         },
     "staff2:staff2" : {
@@ -87,6 +92,7 @@
             "displayName" : "Anthony West",
             "mail" : "Anthony_West@university-example.org",
             "eduPersonAffiliation" : ["employee", "member", "staff"],
+            "eduPersonAffiliation" : ["employee@huniversity-example.org", "staff@university-example.org", "member@university-example.org"],
             "isMemberOf" : "urn:collab:org:aarc-project.eu"
         },
     "staff3:staff3" : {
@@ -99,6 +105,7 @@
             "displayName" : "Oscar Burton",
             "mail" : "Osc@r__Burton@university-example.org",
             "eduPersonAffiliation" : ["employee", "member", "staff"],
+            "eduPersonAffiliation" : ["employee@huniversity-example.org", "staff@university-example.org", "member@university-example.org"],
             "isMemberOf" : "urn:collab:org:aarc-project.eu"
         },
     "student1:student1" : {
@@ -111,6 +118,7 @@
             "displayName" : "Student One",
             "mail" : "student1@diy.surfconext.nl",
             "eduPersonAffiliation" : ["employee", "member", "staff", "student"],
+            "eduPersonAffiliation" : ["employee@diy.surfconext.nl", "staff@diy.surfconext.nl", "member@diy.surfconext.nl", "student@diy.surfconext.nl"],
             "isMemberOf" : "urn:collab:org:aarc-project.eu"
         },
     "student2:student2" : {
@@ -123,6 +131,7 @@
             "displayName" : "Student Two",
             "mail" : "s1869831907@example.org",
             "eduPersonAffiliation" : ["student", "member"],
+            "eduPersonAffiliation" : ["member@diy.surfconext.nl", "student@diy.surfconext.nl"],
             "isMemberOf" : "urn:collab:org:aarc-project.eu"
         },
     "student3:student3" : {
@@ -135,6 +144,7 @@
             "displayName" : "Student Three",
             "mail" : "student3@diy.surfconext.nl",
             "eduPersonAffiliation" : ["member", "student"],
+            "eduPersonAffiliation" : ["member@diy.surfconext.nl", "student@diy.surfconext.nl"],
             "isMemberOf" : "urn:collab:org:aarc-project.eu"
         },
     "student4:student4" : {
@@ -147,6 +157,7 @@
             "displayName" : "Godfried Viggo",
             "mail" : "Godfried.Viggo@unidenmark-example.dk",
             "eduPersonAffiliation" : "student",
+            "eduPersonAffiliation" : ["student@unidenmark-example.dk"],
             "isMemberOf" : "urn:collab:org:aarc-project.eu"
         },
     "student5:student5" : {
@@ -159,6 +170,7 @@
             "displayName" : "Daisuke Takahashi",
             "mail" : "U3342109@exchange-example.edu",
             "eduPersonAffiliation" : ["member", "student"],
+            "eduPersonAffiliation" : ["member@exchange-example.edu", "student@exchange-example.edu"],
             "isMemberOf" : ["urn:collab:org:exchange-university.org", "urn:collab:org:home-university.org"]
         },
     "student6:student6" : {
@@ -171,6 +183,7 @@
             "displayName" : "Phùng Thị Lệ Tư",
             "mail" : ["LeTu02@home-university-example.org", "U6789003@exchange-example.edu"],
             "eduPersonAffiliation" : ["employee", "member", "staff", "student"],
+            "eduPersonAffiliation" : ["employee@home-university-example.org", "staff@home-university-example.org", "member@home-university-example.org", "student@home-university-example.org"],
             "eduPersonEntitlement" : ["urn:mace:dir:entitlement:common-lib-terms-example", "urn:mace:terena.org:tcs:personal-user-example"],
             "isMemberOf" : "urn:collab:org:aarc-project.eu"
         },
@@ -184,19 +197,21 @@
             "displayName" : "Jaantje van der Sanden",
             "mail" : "jsanden@uniamsterdam-example.nl",
             "eduPersonAffiliation" : ["member", "student"],
+            "eduPersonAffiliation" : ["member@uniamsterdam-example.nl", "student@uniamsterdam-example.nl"],
             "eduPersonEntitlement" : ["urn:mace:surf.nl:value:edulicense", "urn:x-surfnet:surf.nl:surfdrive-example:quota:50"],
             "isMemberOf" : "urn:collab:org:aarc-project.eu"
         },
     "student8:student8" : {
             "uid" : ["s445599"],
-            "schacHomeOrganization" : "universitatmadrid-example",
-            "eduPersonPrincipalName" : "s445599@universitatmadrid-example", 
+            "schacHomeOrganization" : "universitatmadrid-example.es",
+            "eduPersonPrincipalName" : "s445599@universitatmadrid-example.es", 
             "cn" : "Alessandra Gómez Llarnas",
             "givenName" : "Alessandra",
             "sn" : "Gómez Llarnas",
             "displayName" : "Alessandra Gómez Llarnas",
             "mail" : "s445599@universitatmadrid-example.es",
             "eduPersonAffiliation" : ["member", "student"],
+            "eduPersonAffiliation" : ["member@universitatmadrid-example.es", "student@universitatmadrid-example.es"],
             "isMemberOf" : "urn:collab:org:aarc-project.eu"
         },
     "student9:student9" : {
@@ -209,6 +224,7 @@
             "displayName" : "August Briseño",
             "mail" : "A.Briseno@universitatmadrid-example.es",
             "eduPersonAffiliation" : ["member", "student"],
+            "eduPersonAffiliation" : ["member@universitatmadrid-example.es", "student@universitatmadrid-example.es"],
             "isMemberOf" : "urn:collab:org:aarc-project.eu"
         },
     "student10:student10" : {
@@ -221,6 +237,7 @@
             "displayName" : "Shao Jingy",
             "mail" : ["s134567@pkuni.edu-example.cn", "shaojingy@gmail-example.com"],
             "eduPersonAffiliation" : ["member", "student"],
+            "eduPersonAffiliation" : ["member@pkuni.edu-example.cn", "student@pkuni.edu-example.cn"],
             "isMemberOf" : "urn:collab:org:aarc-project.eu"
         },
     "student11:student11" : {
@@ -233,6 +250,7 @@
             "displayName" : "Roman Švejda",
             "mail" : "U9088123@uni.poznantech-example.pl",
             "eduPersonAffiliation" : ["member", "student"],
+            "eduPersonAffiliation" : ["member@uni.poznantech-example.pl", "student@uni.poznantech-example.pl"],
             "isMemberOf" : "urn:collab:org:aarc-project.eu"
         },
     "student12:student12" : {
@@ -245,6 +263,7 @@
             "displayName" : "Anna Rybínová",
             "mail" : "U7128109@uni.poznantech-example.pl",
             "eduPersonAffiliation" : ["member", "student"],
+            "eduPersonAffiliation" : ["member@uni.poznantech-example.pl", "student@uni.poznantech-example.pl"],
             "isMemberOf" : "urn:collab:org:aarc-project.eu"
         },
     "student13:student13" : {
@@ -257,6 +276,7 @@
             "displayName" : "Li Qin Ch'ien",
             "mail" : "p0987743@pkuni.edu-example.cn",
             "eduPersonAffiliation" : ["member", "student"],
+            "eduPersonAffiliation" : ["member@pkuni.edu-example.cn", "student@pkuni.edu-example.cn"],
             "isMemberOf" : "urn:collab:org:aarc-project.eu"
         },
     "student14:student14" : {
@@ -269,6 +289,7 @@
             "displayName" : "Martin N. Jørgensen",
             "mail" : "jorgensen07@stockholmuni-example.se",
             "eduPersonAffiliation" : ["member", "student"],
+            "eduPersonAffiliation" : ["member@stockholmuni-example.se", "student@stockholmuni-example.se"],
             "isMemberOf" : "urn:collab:org:sunet-example.se"
         },
     "student15:student15" : {
@@ -281,6 +302,7 @@
             "displayName" : "Sander J. Kjær",
             "mail" : "kjaer11@stockholmuni-example.se",
             "eduPersonAffiliation" : ["member", "student"],
+            "eduPersonAffiliation" : ["member@stockholmuni-example.se", "student@stockholmuni-example.se"],
             "isMemberOf" : ["urn:collab:org:aarc-project.eu", "urn:collab:org:sunet-example.se"]
         },
     "student16:student16" : {
@@ -293,6 +315,7 @@
             "displayName" : "Erôss Neci",
             "mail" : "eross.neci@kuni.edu-example.tr",
             "eduPersonAffiliation" : ["employee", "member", "staff", "student"],
+            "eduPersonAffiliation" : ["employee@kuni.edu-example.tr", "staff@kuni.edu-example.tr", "member@kuni.edu-example.tr", "student@kuni.edu-example.tr"],
             "eduPersonEntitlement" : "urn:mace:terena.org:tcs:personal-user-example",
             "isMemberOf" : ["urn:collab:org:aarc-project.eu", "urn:collab:org:co-example.org"]
         },
@@ -306,6 +329,7 @@
             "displayName" : "Kocsis Szescõ",
             "mail" : "kocsis.szesco@kuni.edu-example.tr",
             "eduPersonAffiliation" : ["member", "student"],
+            "eduPersonAffiliation" : ["member@kuni.edu-example.tr", "student@kuni.edu-example.tr"],
             "isMemberOf" : "urn:collab:org:aarc-project.eu"
         },
     "student18:student18" : {
@@ -318,6 +342,7 @@
             "displayName" : "Marjanca Muršić",
             "mail" : "Marjanca.Mursic@kuni.edu-example.tr",
             "eduPersonAffiliation" : ["member", "student"],
+            "eduPersonAffiliation" : ["member@kuni.edu-example.tr", "student@kuni.edu-example.tr"],
             "isMemberOf" : "urn:collab:org:aarc-project.eu"
         },
     "student19:student19" : {
@@ -330,6 +355,7 @@
             "displayName" : "Petra Penttilä",
             "mail" : ["ppentila@hotmail-example.org", "ppenttila@university-example.org"],
             "eduPersonAffiliation" : ["member", "student"],
+            "eduPersonAffiliation" : ["member@university-example.org", "student@university-example.org"],
             "isMemberOf" : "urn:collab:org:aarc-project.eu"
         },
     "student20:student20" : {
@@ -342,6 +368,7 @@
             "displayName" : "Jóney Ingólfsdóttir",
             "mail" : "Joney.Ingolfsdottir@unidenmark-example.dk",
             "eduPersonAffiliation" : ["member", "student"],
+            "eduPersonAffiliation" : ["member@unidenmark-example.dk", "student@unidenmark-example.dk"],
             "isMemberOf" : "urn:collab:org:aarc-project.eu"
         },
     "student21:student21" : {
@@ -364,6 +391,7 @@
             "displayName" : "Joseph Stiglitz",
             "mail" : ["J.E.Stiglitz@harvard-example.edu", "Joseph.Stiglitz@harvard-example.edu", "jstiglitz@harvard-example.edu"],
             "eduPersonAffiliation" : ["employee", "faculty", "member"],
+            "eduPersonAffiliation" : ["employee@harvard-example.edu", "faculty@harvard-example.edu", "member@harvard-example.edu"],
             "eduPersonEntitlement" : "urn:mace:incommon.org:reg:education-example",
             "isMemberOf" : "urn:collab:org:aarc-project.eu"
         },
@@ -377,6 +405,7 @@
             "displayName" : "Paul Krugman",
             "mail" : ["P.R.Krugman@harvard-example.edu", "Paul.Krugman@harvard-example.edu", "pkrugman@harvard-example.edu"],
             "eduPersonAffiliation" : ["employee", "faculty", "member"],
+            "eduPersonAffiliation" : ["employee@harvard-example.edu", "faculty@harvard-example.edu", "member@harvard-example.edu"],
             "isMemberOf" : "urn:collab:org:aarc-project.eu"
         },
     "teacher3:teacher3" : {
@@ -389,6 +418,7 @@
             "displayName" : "Ben Bernanke",
             "mail" : ["B.S.Bernanke@yale-uni-example.edu", "bbernanke@yale-uni-example.edu", "Ben.Bernanke@yale-uni-example.edu"],
             "eduPersonAffiliation" : ["employee", "faculty", "member"],
+            "eduPersonAffiliation" : ["employee@yale-uni-example.edu", "faculty@yale-uni-example.edu", "member@yale-uni-example.edu"],
             "isMemberOf" : ["urn:collab:org:aarc-project.eu", "urn:collab:org:co-example.org"]
         },
     "teacher4:teacher4" : {
@@ -401,6 +431,7 @@
             "displayName" : "Alan Greenspan",
             "mail" : ["A.Greenspan@yale-uni-example.edu", "agreenspan@yale-uni-example.edu", "Alan.Greenspan@yale-uni-example.edu"],
             "eduPersonAffiliation" : ["employee", "faculty", "member"],
+            "eduPersonAffiliation" : ["employee@yale-uni-example.edu", "faculty@yale-uni-example.edu", "member@yale-uni-example.edu"],
             "isMemberOf" : ["urn:collab:org:aarc-project.eu", "urn:collab:org:co-example.org"]
         },
     "teacher5:teacher5" : {
@@ -413,6 +444,7 @@
             "displayName" : "André-Marie Ampère",
             "mail" : "am_ampere@electrical-uni-example.edu",
             "eduPersonAffiliation" : ["employee", "faculty", "member"],
+            "eduPersonAffiliation" : ["employee@electrical-uni-example.edu", "faculty@electrical-uni-example.edu", "member@electrical-uni-example.edu"],
             "isMemberOf" : "urn:collab:org:aarc-project.eu"
         },
     "teacher6:teacher6" : {
@@ -425,6 +457,7 @@
             "displayName" : "Wilhelm Röntgen",
             "mail" : "w_rontgen@electrical-uni-example.edu",
             "eduPersonAffiliation" : ["employee", "faculty", "member"],
+            "eduPersonAffiliation" : ["employee@electrical-uni-example.edu", "faculty@electrical-uni-example.edu", "member@electrical-uni-example.edu"],
             "isMemberOf" : "urn:collab:org:aarc-project.eu"
         },
     "teacher7:teacher7" : {
@@ -437,6 +470,7 @@
             "displayName" : "Michael Faraday",
             "mail" : "m_faraday@electrical-uni-example.edu",
             "eduPersonAffiliation" : ["employee", "faculty", "member"],
+            "eduPersonAffiliation" : ["employee@electrical-uni-example.edu", "faculty@electrical-uni-example.edu", "member@electrical-uni-example.edu"],
             "isMemberOf" : "urn:collab:org:aarc-project.eu"
         },
     "teacher8:teacher8" : {
@@ -449,6 +483,7 @@
             "displayName" : "Nikola Tesla",
             "mail" : "n_tesla@electrical-uni-example.edu",
             "eduPersonAffiliation" : ["employee", "faculty", "member"],
+            "eduPersonAffiliation" : ["employee@electrical-uni-example.edu", "faculty@electrical-uni-example.edu", "member@electrical-uni-example.edu"],
             "isMemberOf" : "urn:collab:org:aarc-project.eu"
         },
     "teacher9:teacher9" : {
@@ -461,6 +496,7 @@
             "displayName" : "Bill Gates",
             "mail" : "bill.gates@stanford-example.edu",
             "eduPersonAffiliation" : ["member", "employee", "faculty"],
+            "eduPersonAffiliation" : ["employee@stanford-example.edu", "faculty@stanford-example.edu", "member@stanford-example.edu"],
             "eduPersonEntitlement" : "urn:mace:terena.org:tcs:personal-user-example",
             "isMemberOf" : "urn:collab:org:aarc-project.eu"
         },
@@ -474,6 +510,7 @@
             "displayName" : "Steve Jobs",
             "mail" : "steve.jobs@stanford-example.edu",
             "eduPersonAffiliation" : ["employee", "faculty", "member"],
+            "eduPersonAffiliation" : ["employee@stanford-example.edu", "faculty@stanford-example.edu", "member@stanford-example.edu"],
             "eduPersonEntitlement" : "urn:mace:terena.org:tcs:personal-user-example",
             "isMemberOf" : "urn:collab:org:aarc-project.eu"
         }
