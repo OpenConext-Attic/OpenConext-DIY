@@ -5,6 +5,26 @@
  * See: https://simplesamlphp.org/docs/stable/simplesamlphp-reference-idp-hosted
  */
 
+
+// For compatability with Shib Sps we need to put the scopes this IdP supports into the metadata.
+// These first lines read teh logins.json file and process the domain names from the SHO attribute and add them as scopes to the metadata
+$fname = realpath("{{ ssp_well_known_logins }}");
+$well_known_logins=array();
+if(file_exists($fname) && is_readable($fname) && strncmp($fname, "{{ ssp_dir }}", strlen("{{ ssp_dir }}")) == 0) {
+    $well_known_logins = json_decode ( file_get_contents($fname), true);
+    if(!is_array($well_known_logins)) {
+        $well_known_logins = array();
+    }
+}
+
+foreach($well_known_logins as $key => $val) {
+  if ($key != "0") {
+    $domains[] = $val["schacHomeOrganization"];
+  }
+}
+$domains = array_unique($domains);
+
+
 $metadata['__DYNAMIC:1__'] = array(
 	/*
 	 * The hostname of the server (VHOST) that will use this SAML entity.
@@ -44,6 +64,9 @@ $metadata['__DYNAMIC:1__'] = array(
 	 */
 	//'signature.algorithm' => 'http://www.w3.org/2001/04/xmldsig-more#rsa-sha256',
 
+	// Scopes
+	'scope' => $domains,
+	
 	/* Uncomment the following to use the uri NameFormat on attributes. */
 	//'userid.attribute' => 'eduPersonPrincipalName',
 	'authproc' => array(
