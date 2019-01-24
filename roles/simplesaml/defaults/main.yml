@@ -8,7 +8,6 @@ ssp_installation_dir: "/var/www"
 ssp_unarchived_dir: "{{ ssp_installation_dir }}/simplesamlphp-{{ ssp_version }}"
 ssp_dir: "{{ ssp_installation_dir }}/simplesamlphp"
 ssp_modules_dir: "{{ ssp_dir }}/modules"
-ssp_title_suffix:
 ssp_well_known_logins: "{{ ssp_dir }}/config/logins.json"
 ssp_base_url_path: "https://{{ ssp_hostname }}"
 ssp_cert_dir: "cert"

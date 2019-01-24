@@ -25,10 +25,14 @@
   args:
     creates: "{{ ssp_dir }}/{{ ssp_cert_dir }}/{{ ssp_key }}"
 
-# Note that there is a lineinfile module which can do this, however it did not seem possible to specify the line nr
-#- name: Install SSP - Suffix title to differentiate between various environments
-#  when: ssp_title_suffix is defined
-#  command: sed -i "2i $this->data['header'] .= ' - {{ ssp_title_suffix }}';" '{{ ssp_dir }}/templates/includes/header.php'
+- name: Install SSP - Suffix title to differentiate between various environments
+  when: ssp_title_suffix is defined
+  lineinfile:
+    state: present
+    firstmatch: yes
+    insertafter: "<?php"
+    line: "$this->data['header'] .= ' - {{ ssp_title_suffix }}';"
+    path:  "{{ ssp_dir }}/templates/includes/header.php"
 
 - name: Install SSP - Remove unused config files and modules
   file: path="{{ item }}" state=absent

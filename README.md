@@ -1,5 +1,5 @@
-# simplesaml-idp
-Creating a simple IdP to attach to a SAML consuming authentication service is a simple, yet
+# OpenConext-DIY
+Creating an IdP to attach to a SAML consuming authentication service is a simple, yet
 common task that can be easily automated.
 
 This project has the following deployment goals:
@@ -50,28 +50,20 @@ available for each of the `roles`, see the default variable definitions of these
 
 Basic options are:
 
+*Basic Site Information*
+These define the basic FQDN hostname of the target installation and the SAML consuming service linked
+by default to this IdP.
+
     # Site information
     idp_hostname: idp.example.org
     idp_sp: https://sp.example.org
 
-These define the basic FQDN hostname of the target installation and the SAML consuming service linked
-by default to this IdP.
 
-    cert_hostname: "{{ idp_hostname }}"
-    cert_subject: "/CN={{ cert_hostname }}"
+*SimpleSaml*
+These configuration values determine the basic SimpleSAMLphp installation. The SimpleSAMLphp salt is created
+dynamically and will change on redeployment.
 
-By default, the hostname for the certificate is the same as that of the installation. The certificate subject
-is only the hostname and does not contain specific information. This only concerns the self-signed certificate
-for a deployment to a private host, so has no real world implications.
-
-    letsencrypt_email: idp@example.org
-    letsencrypt_domain: "{{ idp_hostname }}"
-    letsencrypt_request_www: false
-
-Default configuration variables for the `letsencrypt` role. This role is based on the LetsEncrypt ansible
-playbook by Jason Robinson: [ansible-letsencrypt](https://github.com/jaywink/ansible-letsencrypt),
-Copyright (c) 2017 Jason Robinson.
-
+    ssp_version: 1.15.4
     ssp_hostname: "{{ idp_hostname }}"
     ssp_subject: "{{ cert_subject }}"
     ssp_days_valid: "{{ cert_days_valid }}"
@@ -82,20 +74,38 @@ Copyright (c) 2017 Jason Robinson.
     ssp_technicalcontact_email: postmaster@{{ idp_hostname }}
     ssp_managingcontact_name: Manager
     ssp_managingcontact_email: webmaster@{{ idp_hostname }}
-    spp_sp_metadata: "{{ idp_sp }}/authentication/sp/metadata"
-    spp_sp_consumer: "{{ idp_sp }}/authentication/sp/consume-assertion"
+    ssp_sp_metadata: "{{ idp_sp }}/authentication/sp/metadata"
+    ssp_sp_consumer: "{{ idp_sp }}/authentication/sp/consume-assertion"
+    ssp_title_suffix: "OpenConext-DIY"
+    
+The 'ssp_title_suffix' option allows differentiating between various default SimpleSaml installations. Comment
+this option out to disable generating the header suffix.
 
-These configuration values determine the basic SimpleSAMLphp installation. The SimpleSAMLphp salt is created
-dynamically and will change on redeployment.
+*Certificates*
+By default, the hostname for the certificate is the same as that of the installation. The certificate subject
+is only the hostname and does not contain specific information. This only concerns the self-signed certificate
+for a deployment to a private host, so has no real world implications.
+    cert_hostname: "{{ idp_hostname }}"
+    cert_subject: "/CN={{ cert_hostname }}"
+
+
+Default configuration variables for the `letsencrypt` role. This role is based on the LetsEncrypt ansible
+playbook by Jason Robinson: [ansible-letsencrypt](https://github.com/jaywink/ansible-letsencrypt),
+Copyright (c) 2017 Jason Robinson.
+
+    letsencrypt_email: idp@example.org
+    letsencrypt_domain: "{{ idp_hostname }}"
+    letsencrypt_request_www: false
+
 A self-signed certificate for SimpleSAMLphp is created automatically, using the same variables by default as
 defined for the self-signed certificate of the HTTPS/SSL configuration.
+The following configuration values determine the basic installation directory of the SimpleSAMLphp website on
+the host target. These are Apache site configuration settings.
 
     ssl_hostname: "{{ idp_hostname }}"
     ssl_webmaster: "webmaster@{{ ssl_hostname }}"
     ssl_docroot: "{{ ssp_dir }}/www"
 
-The last set of configuration values determine the basic installation directory of the SimpleSAMLphp website on
-the host target. These are Apache site configuration settings.
 
 Provisioning
 ============
@@ -120,6 +130,8 @@ After provisioning, the metadata is available at:
     https://{{ idp_hostname }}/saml2/idp/metadata.php
 
 You can use this link to configure service providers to accept this IdP.
+
+Ansible version 2.5 or later is required.
 
 Vagrant
 =======
