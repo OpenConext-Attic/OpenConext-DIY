@@ -22,3 +22,4 @@
     repo: https://github.com/certbot/certbot
     force: yes
     version: '{{letsencrypt_certbot_version}}'
+

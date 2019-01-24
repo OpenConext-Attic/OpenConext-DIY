@@ -7,7 +7,7 @@
   unarchive: src="{{ ssp_tar_location }}" dest="{{ ssp_installation_dir }}" copy=no
 
 - name: Install SSP - Link dir to standard location
-  file: path={{ ssp_dir }} src={{ ssp_unarchived_dir }} state=link
+  file: path={{ ssp_dir }} src={{ ssp_unarchived_dir }} state=link force=true
 
 - name: Install SSP - Generate salt
   shell: /usr/bin/tr -c -d '0123456789abcdefghijklmnopqrstuvwxyz' </dev/urandom | /bin/dd bs=32 count=1 2>/dev/null;echo
@@ -26,9 +26,9 @@
     creates: "{{ ssp_dir }}/{{ ssp_cert_dir }}/{{ ssp_key }}"
 
 # Note that there is a lineinfile module which can do this, however it did not seem possible to specify the line nr
-- name: Install SSP - Suffix title to differentiate between various environments
-  when: ssp_title_suffix is defined
-  command: sed -i "2i $this->data['header'] .= ' - {{ ssp_title_suffix }}';" '{{ ssp_dir }}/templates/includes/header.php'
+#- name: Install SSP - Suffix title to differentiate between various environments
+#  when: ssp_title_suffix is defined
+#  command: sed -i "2i $this->data['header'] .= ' - {{ ssp_title_suffix }}';" '{{ ssp_dir }}/templates/includes/header.php'
 
 - name: Install SSP - Remove unused config files and modules
   file: path="{{ item }}" state=absent
@@ -89,7 +89,7 @@
     - "{{ ssp_modules_dir }}/openid"
     - "{{ ssp_modules_dir }}/openidProvider"
     - "{{ ssp_modules_dir }}/papi"
-    - "{{ ssp_modules_dir }}/portal"
+#    - "{{ ssp_modules_dir }}/portal"
     - "{{ ssp_modules_dir }}/preprodwarning"
     - "{{ ssp_modules_dir }}/radius"
     - "{{ ssp_modules_dir }}/riak"

@@ -2,14 +2,6 @@
 - include_vars: "packages.yml"
 - include_vars: "repositories.yml"
 
-#Command for switch from apache2_handler to php-fpm
-#- name: Remove a repo
-#  apt_repository:
-#    repo: "{{ item }}"
-#    state: present
-#    update_cache: no
-#  with_items: removerepository
-
 # add the PPA key for the ondrej PHP version packages
 - name: update key cache
   apt_key:
@@ -36,12 +28,6 @@
     state: present
   with_items: "{{ packages  }}"
   become: Yes
-
-#- name: install php-fpm packages
-#  apt:
-#    name: "{{ item }}"
-#    state: present
-#  with_items: packagesfastcgi
 
 - name: Check if FQDN is resolvable
   command: dig @8.8.8.8 {{ idp_hostname }}
