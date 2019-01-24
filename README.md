@@ -20,12 +20,17 @@ From the [SimpleSAMLphp website](https://simplesamlphp.org/):
 The final product of this project is a complete SimpleSAMLphp IdP installation that uses the
 'example-auth' module to allow login using a set of well-known logins as defined on:
 
-    https://diy-idp.pilots.aarc-project.eu/simplesaml/showusers.php
+    ```https://diy-idp.pilots.aarc-project.eu/simplesaml/showusers.php```
 
 These users combine a diverse set of unicode characters and entity definitions usable in testing the
 proper implementations of SAML consuming service providers. The configuration of these users is
 present inside the SimpleSAMLphp installation in a JSON encoded file called: `simplesamlphp/config/logins.json`,
 which is copied from the ansible deployment to its final destination upon provisioning.
+The original file can be found in the group_vars directory:
+
+    ```group_vars/logins.json```
+    
+You can add additional users and attributes to this file and (re)provision the IdP.
 
 The final product is a single-server installation and not useable in production environments.
 
@@ -35,7 +40,13 @@ The provisioning script was developed for deployment to an Ubuntu Xenial Xerus (
 installation. Due to the requirement of python for Ansible, the basic installation requires
 installation of at least the 'python' package:
 
-    sudo apt-get install python
+    ```sudo apt-get install python```
+    
+Instead of installing python, you can use the default python3 installation by supplying an
+ansible configuration
+
+    ```--extra-vars "ansible_python_interpreter=/usr/bin/python3"```
+
 
 All other required packages are installed automatically.
 
@@ -115,7 +126,11 @@ machine IP address is defined at the top of that inventory file.
 
 Then provision the application by running:
 
-    ansible-playbook -i inventory simplesaml-idp.yml
+    ```ansible-playbook -i inventory simplesaml-idp.yml```
+
+or
+
+    ```ansible-playbook -i inventory simplesaml-idp.yml --extra-vars "ansible_python_interpreter=/usr/bin/python3"```
 
 During provisioning, the roles and tasks will:
 - try to find out if the target machine has a publicly accessible network address
@@ -127,7 +142,7 @@ During provisioning, the roles and tasks will:
 
 After provisioning, the metadata is available at:
 
-    https://{{ idp_hostname }}/saml2/idp/metadata.php
+    ```https://{{ idp_hostname }}/saml2/idp/metadata.php```
 
 You can use this link to configure service providers to accept this IdP.
 

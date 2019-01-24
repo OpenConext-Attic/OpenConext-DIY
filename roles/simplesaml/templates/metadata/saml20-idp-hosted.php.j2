@@ -6,8 +6,9 @@
  */
 
 
-// For compatability with Shib Sps we need to put the scopes this IdP supports into the metadata.
-// These first lines read teh logins.json file and process the domain names from the SHO attribute and add them as scopes to the metadata
+// For compatibility with Shib SPs we need to put the scopes this IdP supports into the metadata.
+// These first lines read the logins.json file and process the domain names from the SHO attribute 
+// and add them as scopes to the metadata
 $fname = realpath("{{ ssp_well_known_logins }}");
 $well_known_logins=array();
 if(file_exists($fname) && is_readable($fname) && strncmp($fname, "{{ ssp_dir }}", strlen("{{ ssp_dir }}")) == 0) {
