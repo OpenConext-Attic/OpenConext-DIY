@@ -20,7 +20,7 @@ From the [SimpleSAMLphp website](https://simplesamlphp.org/):
 The final product of this project is a complete SimpleSAMLphp IdP installation that uses the
 'example-auth' module to allow login using a set of well-known logins as defined on:
 
-    ```https://diy-idp.pilots.aarc-project.eu/simplesaml/showusers.php```
+    https://diy-idp.pilots.aarc-project.eu/simplesaml/showusers.php
 
 These users combine a diverse set of unicode characters and entity definitions usable in testing the
 proper implementations of SAML consuming service providers. The configuration of these users is
@@ -28,7 +28,7 @@ present inside the SimpleSAMLphp installation in a JSON encoded file called: `si
 which is copied from the ansible deployment to its final destination upon provisioning.
 The original file can be found in the group_vars directory:
 
-    ```group_vars/logins.json```
+    group_vars/logins.json
     
 You can add additional users and attributes to this file and (re)provision the IdP.
 
@@ -38,14 +38,14 @@ Setup
 =====
 The provisioning script was developed for deployment to an Ubuntu Xenial Xerus (16.04 LTS)
 installation. Due to the requirement of python for Ansible, the basic installation requires
-installation of at least the 'python' package:
+installation of at least the `python` package:
 
-    ```sudo apt-get install python```
+    sudo apt-get install python
     
-Instead of installing python, you can use the default python3 installation by supplying an
+Instead of installing python, you can use the default `python3` installation by supplying an
 ansible configuration
 
-    ```--extra-vars "ansible_python_interpreter=/usr/bin/python3"```
+    --extra-vars "ansible_python_interpreter=/usr/bin/python3"
 
 
 All other required packages are installed automatically.
@@ -126,13 +126,14 @@ machine IP address is defined at the top of that inventory file.
 
 Then provision the application by running:
 
-    ```ansible-playbook -i inventory simplesaml-idp.yml```
+    ansible-playbook -i inventory openconext-diy.yml
 
 or
 
-    ```ansible-playbook -i inventory simplesaml-idp.yml --extra-vars "ansible_python_interpreter=/usr/bin/python3"```
+    ansible-playbook -i inventory openconext-diy.yml --extra-vars "ansible_python_interpreter=/usr/bin/python3"
 
 During provisioning, the roles and tasks will:
+
 - try to find out if the target machine has a publicly accessible network address
 - if so, a LetsEncrypt certificate is requested automatically and configured
 - if not, a self-signed certificate is configured for SSL
@@ -142,7 +143,7 @@ During provisioning, the roles and tasks will:
 
 After provisioning, the metadata is available at:
 
-    ```https://{{ idp_hostname }}/saml2/idp/metadata.php```
+    https://{{ idp_hostname }}/saml2/idp/metadata.php
 
 You can use this link to configure service providers to accept this IdP.
 
@@ -150,7 +151,7 @@ Ansible version 2.5 or later is required.
 
 Vagrant
 =======
-A `VagrantFile` is provided for easy vagrant provisioning. Please adjust any overrides for the default
+A `Vagrantfile` is provided for easy vagrant provisioning. Please adjust any overrides for the default
 `group_var/idp.yml` configuration in that file. Due to a problem with the network interface
 names in Ubuntu 15.10, 16.04, 16.10 and (presumably) later versions, the `vagrant up` command will fail
 on network enabling. However, the box is provisioned (as far as vagrant is concerned) correctly
@@ -160,6 +161,17 @@ nonetheless. Run the following commands:
     vagrant provision
 
 to get the vagrant machine up and running. The `VagrantFile` uses the VirtualBox provider by default.
+
+Docker
+======
+A basic `Dockerfile` is available to install this IdP on a Docker container. Due to Docker networking
+configuration and setup, this installation knows neither hostname nor IP address, so additional 
+configuration after provisioning is required. 
+
+The `Dockerfile` mounts the SimpleSAML metadata directory. In the `docker-run` script file, the Docker
+image is build and the run command mounts the local `docker/metadata` directory to the container,
+allowing local edits to appear in the container metadata. You can use this as a starting point for
+configuring and running your own containers. 
 
 Disclaimer
 ==========

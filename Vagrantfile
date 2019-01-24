@@ -38,7 +38,7 @@ Vagrant.configure("2") do |config|
         target.vm.provision "shell", inline: $python2
 
         target.vm.provision "ansible" do |ansible|
-            ansible.playbook = "simplesaml-idp.yml"
+            ansible.playbook = "openconext-diy.yml"
 
             ansible.groups = {
                 "idp" => ["target"],

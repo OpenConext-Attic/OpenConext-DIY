@@ -1,0 +1,13 @@
+#!/bin/bash
+
+DCK=`which docker`
+
+# cleanup
+$DCK rm $($DCK stop $($DCK ps -a -q --filter ancestor=openconext-diy --format="{{.ID}}"))
+
+VOL=`realpath docker/metadata`
+LOG=`realpath docker/log`
+
+$DCK build -t openconext-diy .
+
+$DCK run -dit --name openconext-diy -p 8443:443 --mount type=bind,src=$LOG,dst=/var/log --mount type=bind,src=$VOL,dst=/var/www/simplesamlphp/metadata  openconext-diy

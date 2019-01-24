@@ -24,9 +24,8 @@
 
 - name: ensure that packages are installed
   apt:
-    name: "{{ item }}"
+    name: "{{ packages }}"
     state: present
-  with_items: "{{ packages  }}"
   become: Yes
 
 - name: Check if FQDN is resolvable
@@ -35,4 +34,4 @@
 
 - set_fact:
   args:
-    resolvable_fqdn: "{{ dig.stdout | search('.*HEADER.*NOERROR.*') }}"
+    resolvable_fqdn: "{{ dig.stdout is search('.*HEADER.*NOERROR.*') }}"
