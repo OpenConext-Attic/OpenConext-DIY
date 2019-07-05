@@ -32,4 +32,5 @@ ssp_logging_handler: 'syslog'
 ssp_session_authtoken_cookiename: SimpleSAMLAuthToken
 ssp_store_type: phpsession
 spp_sp_metadata:
-spp_sp_consumer: 
+spp_sp_consumer:
+ssp_theme: "default" 
