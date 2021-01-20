@@ -10,7 +10,7 @@ letsencrypt_request_www: false
 # apache is installed first and claims port 80. Pause it to allow LetsEncrypt to request a certificate
 letsencrypt_pause_services: [apache2]
 
-ssp_version: 1.15.4
+ssp_version: 1.18.8
 ssp_hostname: "{{ idp_hostname }}"
 ssp_subject: "{{ cert_subject }}"
 ssp_days_valid: "{{ cert_days_valid }}"

@@ -2,7 +2,7 @@
 # playbook to install and configure a SimpleSamlPHP installation with optional LetsEncrypt certificates
 
 - hosts:
-  - target
+  - idp
 #  connection: local
   become_user: root
   become: True

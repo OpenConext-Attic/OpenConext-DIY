@@ -3,12 +3,11 @@ packages:
   - apache2
   - certbot
   - libpq-dev
-  - php
-  - libapache2-mod-php
+  - php5.6
+  - libapache2-mod-php5.6
 #  - php-fpm
-  - php-mbstring
-  - php-mcrypt
-  - php-xml
+  - php5.6-mbstring
+  - php5.6-xml
   - postfix
   - python-certbot-apache
 
