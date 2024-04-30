@@ -2,12 +2,18 @@
 - include_vars: "packages.yml"
 - include_vars: "repositories.yml"
 
-# add the PPA key for the ondrej PHP version packages
-- name: update key cache
-  apt_key:
-    keyserver: keyserver.ubuntu.com
-    id: 4F4EA0AAE5267A6C
+- name: ensure that packages are installed
+  apt:
+    name: "{{ packages }}"
     state: present
+  become: Yes
+
+# add the PPA key for the ondrej PHP version packages
+# - name: update key cache
+#   apt_key:
+#     keyserver: keyserver.ubuntu.com
+#     id: 4F4EA0AAE5267A6C
+#     state: present
 
 - name: perform apt-get update
   apt:
@@ -15,18 +21,12 @@
     cache_valid_time: 1
   become: Yes
 
-- name: Ensure all necessary repositories are present
-  apt_repository:
-    repo: "{{ item }}"
-    state: present
-  with_items: "{{ repositories }}"
-  become: Yes
-
-- name: ensure that packages are installed
-  apt:
-    name: "{{ packages }}"
-    state: present
-  become: Yes
+# - name: Ensure all necessary repositories are present
+#   apt_repository:
+#     repo: "{{ item }}"
+#     state: present
+#   with_items: "{{ repositories }}"
+#   become: Yes
 
 - name: Check if FQDN is resolvable
   command: dig @8.8.8.8 {{ idp_hostname }}

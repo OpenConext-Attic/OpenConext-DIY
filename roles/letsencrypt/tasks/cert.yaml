@@ -5,7 +5,7 @@
 - set_fact: _letsencrypt_certbot_args="{{ letsencrypt_certbot_args + ['--keep-until-expiring'] }}"
   when: not letsencrypt_force_renew
 
-- set_fact: _letsencrypt_domains="--domains {{letsencrypt_domain}},www.{{letsencrypt_domain}}"
+- set_fact: _letsencrypt_domains="--domains {{letsencrypt_domain}}"
   when: letsencrypt_request_www
 
 - set_fact: _letsencrypt_domains="--domains {{letsencrypt_domain}}"
@@ -20,9 +20,9 @@
   register: _services_stopped
 
 - name: Obtain or renew cert for domain
-  shell: ./certbot-auto {{_letsencrypt_certbot_combined_args | join(' ')}} 2>&1
+  shell: certbot {{_letsencrypt_certbot_combined_args | join(' ')}} 2>&1
   args:
-    chdir: /opt/certbot
+    # chdir: /opt/certbot
     executable: /bin/bash
   ignore_errors: true
   register: _certbot_command
@@ -38,7 +38,7 @@
     key_file: "/etc/letsencrypt/live/{{ letsencrypt_domain }}/privkey.pem"
     certificate_file: "/etc/letsencrypt/live/{{ letsencrypt_domain }}/cert.pem"
     chain_file: "/etc/letsencrypt/live/{{ letsencrypt_domain }}/fullchain.pem"
-  when: _signing_successful
+  # when: _signing_successful
 
 - name: Starting paused Services
   service: name="{{item.item}}" state=started

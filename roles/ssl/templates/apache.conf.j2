@@ -22,7 +22,7 @@
                 RewriteCond %{REQUEST_FILENAME} !-f
                 RewriteCond %{REQUEST_FILENAME} !-d
                 RewriteCond %{REQUEST_URI} !=/favicon.ico
-		        RewriteCond $1 !^(index\.php|js|css|images|robots\.txt)
+		        RewriteCond $1 !^(index\.php|js|assets|images|robots\.txt)
                 RewriteRule ^(.*)$ /index.php/$1 [NE,NC,L,QSA]
                 RewriteBase /
         </Directory>
