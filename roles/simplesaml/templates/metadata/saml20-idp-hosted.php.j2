@@ -7,7 +7,7 @@
 
 
 // For compatibility with Shib SPs we need to put the scopes this IdP supports into the metadata.
-// These first lines read the logins.json file and process the domain names from the SHO attribute 
+// These first lines read the logins.json file and process the domain names from the SHO attribute
 // and add them as scopes to the metadata
 $fname = realpath("{{ ssp_well_known_logins }}");
 $well_known_logins=array();
@@ -26,7 +26,7 @@ foreach($well_known_logins as $key => $val) {
 $domains = array_unique($domains);
 
 
-$metadata['__DYNAMIC:1__'] = array(
+$metadata['https://{{ ssp_hostname }}/module.php/saml/idp/metadata'] = array(
 	/*
 	 * The hostname of the server (VHOST) that will use this SAML entity.
 	 *
@@ -67,7 +67,7 @@ $metadata['__DYNAMIC:1__'] = array(
 
 	// Scopes
 	'scope' => $domains,
-	
+
 	/* Uncomment the following to use the uri NameFormat on attributes. */
 	//'userid.attribute' => 'eduPersonPrincipalName',
 	'authproc' => array(
