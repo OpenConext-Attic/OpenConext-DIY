@@ -41,7 +41,7 @@ installation.
 
 All other required packages are installed automatically.
 
-The installation will use the default PHP version (7.1). You can make this work for other versions
+The installation will use the default PHP version (8.2). You can make this work for other versions
 as well (PHP5.6 for example) by adjusting the package requirements in the `common` role. Some tweaking
 may apply in the `apache` role as well to get the right modules enabled.
 
