@@ -1,7 +1,7 @@
 ---
 - name: Operating system dependencies
-  apt: name={{ item }} state=present
-  with_items:
+  apt:
+    name:
     - build-essential
     - libssl-dev
     - libffi-dev
@@ -12,6 +12,7 @@
     - dialog
     - libaugeas0
     - ca-certificates
+    state: present
 - name: Python cryptography module
   pip: name=cryptography
 - name: Letsencrypt Python client

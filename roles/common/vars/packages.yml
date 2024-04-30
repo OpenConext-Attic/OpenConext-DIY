@@ -1,15 +1,18 @@
 ---
 packages:
   - apache2
-  - certbot
+  - libapache2-mod-php
   - libpq-dev
-  - php5.6
-  - libapache2-mod-php5.6
-#  - php-fpm
-  - php5.6-mbstring
-  - php5.6-xml
+  - php
+  - php-mbstring
+  - php-xml
+  - php-curl
+  - composer
   - postfix
-  - python-certbot-apache
+  - certbot
+  - python3-certbot-apache
+  - gnupg2
+  - bind9-dnsutils
 
 packagesfastcgi:
   - libapache2-mod-fastcgi

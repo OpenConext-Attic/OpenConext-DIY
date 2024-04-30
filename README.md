@@ -29,28 +29,19 @@ which is copied from the ansible deployment to its final destination upon provis
 The original file can be found in the group_vars directory:
 
     group_vars/logins.json
-    
+
 You can add additional users and attributes to this file and (re)provision the IdP.
 
 The final product is a single-server installation and not useable in production environments.
 
 Setup
 =====
-The provisioning script was developed for deployment to an Ubuntu Xenial Xerus (16.04 LTS)
-installation. Due to the requirement of python for Ansible, the basic installation requires
-installation of at least the `python` package:
-
-    sudo apt-get install python
-    
-Instead of installing python, you can use the default `python3` installation by supplying an
-ansible configuration
-
-    --extra-vars "ansible_python_interpreter=/usr/bin/python3"
-
+The provisioning script was developed for deployment to an Debian Bookworm (12)
+installation.
 
 All other required packages are installed automatically.
 
-The installation will use the default PHP version (7.1). You can make this work for other versions
+The installation will use the default PHP version (8.2). You can make this work for other versions
 as well (PHP5.6 for example) by adjusting the package requirements in the `common` role. Some tweaking
 may apply in the `apache` role as well to get the right modules enabled.
 
@@ -88,7 +79,7 @@ dynamically and will change on redeployment.
     ssp_sp_metadata: "{{ idp_sp }}/authentication/sp/metadata"
     ssp_sp_consumer: "{{ idp_sp }}/authentication/sp/consume-assertion"
     ssp_title_suffix: "OpenConext-DIY"
-    
+
 The 'ssp_title_suffix' option allows differentiating between various default SimpleSaml installations. Comment
 this option out to disable generating the header suffix.
 
@@ -128,10 +119,6 @@ Then provision the application by running:
 
     ansible-playbook -i inventory openconext-diy.yml
 
-or
-
-    ansible-playbook -i inventory openconext-diy.yml --extra-vars "ansible_python_interpreter=/usr/bin/python3"
-
 During provisioning, the roles and tasks will:
 
 - try to find out if the target machine has a publicly accessible network address
@@ -143,7 +130,7 @@ During provisioning, the roles and tasks will:
 
 After provisioning, the metadata is available at:
 
-    https://{{ idp_hostname }}/saml2/idp/metadata.php
+    https://{{ idp_hostname }}/module.php/saml/idp/metadata
 
 You can use this link to configure service providers to accept this IdP.
 
@@ -165,13 +152,13 @@ to get the vagrant machine up and running. The `VagrantFile` uses the VirtualBox
 Docker
 ======
 A basic `Dockerfile` is available to install this IdP on a Docker container. Due to Docker networking
-configuration and setup, this installation knows neither hostname nor IP address, so additional 
-configuration after provisioning is required. 
+configuration and setup, this installation knows neither hostname nor IP address, so additional
+configuration after provisioning is required.
 
 The `Dockerfile` mounts the SimpleSAML metadata directory. In the `docker-run` script file, the Docker
 image is build and the run command mounts the local `docker/metadata` directory to the container,
 allowing local edits to appear in the container metadata. You can use this as a starting point for
-configuring and running your own containers. 
+configuring and running your own containers.
 
 Disclaimer
 ==========

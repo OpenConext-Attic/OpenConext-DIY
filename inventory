@@ -1,4 +1,4 @@
-target  ansible_host=127.0.0.1
+target  ansible_host=145.0.6.67
 
 [idp]
 target
